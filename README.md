@@ -161,8 +161,8 @@ From here you can deploy to higher level environments, assuming you have created
 
 Once successfully deployed, execute the Job **JIRA__DAILY_ISSUE_FIELD_HISTORY_LOAD** against an environment.
 
-# How is this package maintained and can I contribute?
-## Package Maintenance
+# How is this pipeline maintained and can I contribute?
+## Pipeline Maintenance
 The Coalesce team maintaining this package _only_ maintains the latest version of the package. 
 
 ## Contributions
