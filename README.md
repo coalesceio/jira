@@ -65,7 +65,7 @@ Once the Project has been created select `Create Workspace`.  Enter a name and m
 9. This will overwrite any uncommitted work in the Workspace, which is what we want, so you will be required to confirm the Force Checkout by typing **FORCE** in the screen.
 10. At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
 
-## Step 3: Workspace Configuration
+## Step 4: Workspace Configuration
 
 In this section you will configure the following Workspace settings:
 - **Build Settings** - Configure [Storage Locations](https://docs.coalesce.io/docs/storage-locations-and-storage-mappings)
