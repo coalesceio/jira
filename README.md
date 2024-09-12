@@ -78,7 +78,7 @@ This will overwrite any uncommitted work in the Workspace, which is what we want
 
 At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
 
-## Step 3: Workspace Configuration
+## Step 4: Workspace Configuration
 
 In this section you will configure the following Workspace settings:
 - **Build Settings** - Configure [Storage Locations](https://docs.coalesce.io/docs/storage-locations-and-storage-mappings)
@@ -97,8 +97,12 @@ The pipeline equires four Storage Locations be created.
 #### Environments
 Environments must be configured in order to deploy pipeline to higher level environments (QA, UAT, Pre-Prod, Prod, etc.) based on how you are managing your environments.
 
+If implementing the `jira_dynamic_table` version of the pipeline then the parameters reference in Workspace Settings below will be required.
+
+If implementing the `jira_full_load` then no parameters are required.
+
 ### Workspace Settings
-The only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the jira_dynamic_table version requires some parameters to be created and set.  Other than that the configuration is the same between them.
+In Workspace Settings the only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the `jira_dynamic_table` version requires some parameters to be created and set.  Other configurations are the same.
 
 - **Settings** - Configure the Snowflake account that Coalesce will be utilizing
 - **User Credentials / OAuth Settings** - Enter the credentials required to connect to Snowflake
