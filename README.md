@@ -42,43 +42,31 @@ To use this Coalesce pipeline, you must have the following:
   - [Dynamic Tables](https://docs.coalesce.io/page/package_coalesce_dynamic-tables) (version 1.1.3+)
 
 ## Step 2: Import the coalesceio Jira repository
-In Github select create a new repository and select `Import a repository`.
 
-The URL for the Jira source repository is https://github.com/coalesceio/jira.git.  This is a Public repository so no credentials are required.
-
-Select an owner and give your repository a name.
-
-After the import is complete you will see two branches available:
-
-- **jira_dynamic_table** - This is an entire pipeline of Dynamic Tables to manage the Jira pipeline.
-- **jira_full_load** - This is an entire pipeline of mostly views and one table loaded by the job `JIRA__DAILY_ISSUE_FIELD_HISTORY_LOAD` to fully reload the Jira pipeline.
-
-Either branch can be selected when setting up a Workspace which will be described below.
+1. In Github select create a new repository and select `Import a repository`.
+2. The URL for the Jira source repository is https://github.com/coalesceio/jira.git.  This is a Public repository so no credentials are required.
+3. Select an owner and give your repository a name.
+4. After the import is complete you will see two branches available:
+    - **jira_dynamic_table** - This is an entire pipeline of Dynamic Tables to manage the Jira pipeline.
+    - **jira_full_load** - This is an entire pipeline of mostly views and one table loaded by the job `JIRA__DAILY_ISSUE_FIELD_HISTORY_LOAD` to fully reload the Jira pipeline.
+5. Either branch can be selected when setting up a Workspace which will be described below.
 
 ## Step 3: Set up a Project / Workspace in Coalesce
-After the Git repo has been imported follow the Coalesce [documentation](https://docs.coalesce.io/docs/projects#create-a-new-project) to create a new project.  Initially, choose the option `Skip and Create` in the window for `Setup Version Control`.  We will connect to the Git repository after creating a Workspace.
 
+1. After the Git repo has been imported follow the Coalesce [documentation](https://docs.coalesce.io/docs/projects#create-a-new-project) to create a new project.  Initially, choose the option `Skip and Create` in the window for `Setup Version Control`.  We will connect to the Git repository after creating a Workspace.
 Once the Project has been created select `Create Workspace`.  Enter a name and meaninful desription based on the Git branch you want to start from, either Dynamic Table or full load based.
+<<<<<<< tjperry07-patch-1
+2. At this point we are going to set up version control.  Select `Project Settings` and in the [Git Repository](https://docs.coalesce.io/docs/changing-a-git-repository-in-coalesce) section enter the URL of the repository you imported into your Git account as the Git Repository URL.
+3. Save the `Project Settings`.
+4. If you have enabled security for your Git repo, [Configure Git Account](https://docs.coalesce.io/docs/set-up-your-git-integration#add-through-the-project-dashboard).
+5. After configuring the Git repo select `Launch` to launch the Workspace so we can attach it to a Git branch.
+6. A Workspace can be attached to a branch by either selecting the `Git` modal or selecting `git branch` from the Workspace warning message `"Finish setting up version control for this workspace and avoid losing any work. Attach this workspace to a git branch"`.
+7. After the `Attach Workspace to Branch` opens select the desired branch - **jira_dynamic_table** or **jira_full_laod** to attach and `Attach` it.
+8. Click on the `Git` modal, navigate to the `Branches` tab and select the [Branch Action](https://docs.coalesce.io/docs/git-branches#branch-actions) `Force Checkout` to populate the workspace with the latest Git commit.
+9. This will overwrite any uncommitted work in the Workspace, which is what we want, so you will be required to confirm the Force Checkout by typing **FORCE** in the screen.
+10. At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
 
-At this point we are going to set up version control.  Select `Project Settings` and in the [Git Repository](https://docs.coalesce.io/docs/changing-a-git-repository-in-coalesce) section enter the URL of the repository you imported into your Git account as the Git Repository URL.
-
-Save the `Project Settings`.
-
-If you have enabled security for your Git repo, [Configure Git Account](https://docs.coalesce.io/docs/set-up-your-git-integration#add-through-the-project-dashboard).
-
-After configuring the Git repo select `Launch` to launch the Workspace so we can attach it to a Git branch.
-
-A Workspace can be attached to a branch by either selecting the `Git` modal or selecting `git branch` from the Workspace warning message `"Finish setting up version control for this workspace and avoid losing any work. Attach this workspace to a git branch"`.
-
-After the `Attach Workspace to Branch` opens select the desired branch - **jira_dynamic_table** or **jira_full_laod** to attach and `Attach` it.
-
-Click on the `Git` modal, navigate to the `Branches` tab and select the [Branch Action](https://docs.coalesce.io/docs/git-branches#branch-actions) `Force Checkout` to populate the workspace with the latest Git commit.
-
-This will overwrite any uncommitted work in the Workspace, which is what we want, so you will be required to confirm the Force Checkout by typing **FORCE** in the screen.
-
-At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
-
-## Step 3: Workspace Configuration
+## Step 4: Workspace Configuration
 
 In this section you will configure the following Workspace settings:
 - **Build Settings** - Configure [Storage Locations](https://docs.coalesce.io/docs/storage-locations-and-storage-mappings)
@@ -97,8 +85,12 @@ The pipeline equires four Storage Locations be created.
 #### Environments
 Environments must be configured in order to deploy pipeline to higher level environments (QA, UAT, Pre-Prod, Prod, etc.) based on how you are managing your environments.
 
+If implementing the `jira_dynamic_table` version of the pipeline then the parameters reference in Workspace Settings below will be required.
+
+If implementing the `jira_full_load` then no parameters are required.
+
 ### Workspace Settings
-The only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the jira_dynamic_table version requires some parameters to be created and set.  Other than that the configuration is the same between them.
+In Workspace Settings the only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the `jira_dynamic_table` version requires some parameters to be created and set.  Other configurations are the same.
 
 - **Settings** - Configure the Snowflake account that Coalesce will be utilizing
 - **User Credentials / OAuth Settings** - Enter the credentials required to connect to Snowflake
