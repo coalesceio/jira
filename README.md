@@ -65,26 +65,6 @@ Once the Project has been created select `Create Workspace`.  Enter a name and m
 8. Click on the `Git` modal, navigate to the `Branches` tab and select the [Branch Action](https://docs.coalesce.io/docs/git-branches#branch-actions) `Force Checkout` to populate the workspace with the latest Git commit.
 9. This will overwrite any uncommitted work in the Workspace, which is what we want, so you will be required to confirm the Force Checkout by typing **FORCE** in the screen.
 10. At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
-=======
-
-At this point we are going to set up version control.  Select `Project Settings` and in the [Git Repository](https://docs.coalesce.io/docs/changing-a-git-repository-in-coalesce) section enter the URL of the repository you imported into your Git account as the Git Repository URL.
-
-Save the `Project Settings`.
-
-If you have enabled security for your Git repo, [Configure Git Account](https://docs.coalesce.io/docs/set-up-your-git-integration#add-through-the-project-dashboard).
-
-After configuring the Git repo select `Launch` to launch the Workspace so we can attach it to a Git branch.
-
-A Workspace can be attached to a branch by either selecting the `Git` modal or selecting `git branch` from the Workspace warning message `"Finish setting up version control for this workspace and avoid losing any work. Attach this workspace to a git branch"`.
-
-After the `Attach Workspace to Branch` opens select the desired branch - **jira_dynamic_table** or **jira_full_laod** to attach and `Attach` it.
-
-Click on the `Git` modal, navigate to the `Branches` tab and select the [Branch Action](https://docs.coalesce.io/docs/git-branches#branch-actions) `Force Checkout` to populate the workspace with the latest Git commit.
-
-This will overwrite any uncommitted work in the Workspace, which is what we want, so you will be required to confirm the Force Checkout by typing **FORCE** in the screen.
-
-At this point the DAG objects should appear in your Workspace with errors.  Some workspace configuration is required to fix these errors.
->>>>>>> jira_dynamic_table
 
 ## Step 4: Workspace Configuration
 
@@ -110,11 +90,7 @@ If implementing the `jira_dynamic_table` version of the pipeline then the parame
 If implementing the `jira_full_load` then no parameters are required.
 
 ### Workspace Settings
-<<<<<<< tjperry07-patch-1
-The only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the `jira_dynamic_table` version requires some parameters to be created and set.  Other than that the configuration is the same between them.
-=======
 In Workspace Settings the only difference between the `jira_dynamic_table` and `jira_full_load` versions of the Jira pipeline is that the `jira_dynamic_table` version requires some parameters to be created and set.  Other configurations are the same.
->>>>>>> jira_dynamic_table
 
 - **Settings** - Configure the Snowflake account that Coalesce will be utilizing
 - **User Credentials / OAuth Settings** - Enter the credentials required to connect to Snowflake
