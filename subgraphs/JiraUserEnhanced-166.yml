@@ -1,0 +1,16 @@
+fileVersion: 1
+id: "166"
+name: Jira User Enhanced
+steps:
+  - 0cea232d-fda9-497b-9ad3-80741c65c3b8
+  - 12d89583-3ecf-4d62-9144-ce2ac6ae75bf
+  - 24aaba8f-c45a-4692-ab4f-4e33add57e62
+  - 2fbe86dc-ed03-4d3e-bee4-9b06f0de28c3
+  - 34e06ab1-bfdf-41d7-8fff-16b32a8f951f
+  - 408abbc9-d0fc-4fda-915b-dec12ac96851
+  - a4061bae-a205-4680-88d3-db488f612bbb
+  - a7dfcf6b-07a9-4024-ad12-8b7ccb5bc344
+  - d9a460ac-aa4b-4773-9c0b-ffabab042c7f
+  - daaa0244-7a3b-413b-998c-a9101e6595e6
+type: Subgraph
+version: 1
