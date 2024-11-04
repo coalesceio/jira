@@ -1,0 +1,23 @@
+fileVersion: 1
+id: "161"
+name: Jira Project Enhanced
+steps:
+  - 0cea232d-fda9-497b-9ad3-80741c65c3b8
+  - 12d89583-3ecf-4d62-9144-ce2ac6ae75bf
+  - 1aa224d5-a856-4ef4-a048-65e3b74357b0
+  - 2c27277d-11a8-4c3f-ba9f-9f91d503b77b
+  - 2fbe86dc-ed03-4d3e-bee4-9b06f0de28c3
+  - 7c29b732-9893-472a-bef2-18ea16521f09
+  - 86b5c4fc-b37f-4b4b-929b-2654e64ee8c4
+  - 8b9e8d5c-1084-40ee-83a5-c97eb4335ed8
+  - 8e523133-839c-40b0-a1a0-ddebc7e9dbf0
+  - 99cac762-ccb1-4a79-9058-38e353ebf9fe
+  - a2ffd815-f099-4bde-9936-5c7701b50c1e
+  - afc26601-cc59-4e18-94ee-49e106e17f4a
+  - b722495a-664f-4233-a81f-24d050f653e9
+  - c36a01cd-c804-4fd2-993a-15355dfa4a15
+  - cfce6964-c132-40f3-a269-c9e76b8e553e
+  - daaa0244-7a3b-413b-998c-a9101e6595e6
+  - e2c48eeb-cd24-4553-ab78-5704ce250ce2
+type: Subgraph
+version: 1
